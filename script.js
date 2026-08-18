@@ -39,3 +39,34 @@ botoesOpcao.forEach(botao => {
         }
     });
 });
+
+// --- LÓGICA DO CARROSSEL DE DICAS ---
+let slideAtual = 0;
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+
+function mostrarSlide(index) {
+    if (index >= slides.length) slideAtual = 0;
+    else if (index < 0) slideAtual = slides.length - 1;
+    else slideAtual = index;
+
+    // Esconde todos os slides e remove classe ativa dos dots
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+
+    // Mostra o slide atual e ativa o dot correspondente
+    slides[slideAtual].classList.add('active');
+    dots[slideAtual].classList.add('active');
+}
+
+document.getElementById('btnProximo').addEventListener('click', () => {
+    mostrarSlide(slideAtual + 1);
+});
+
+document.getElementById('btnAnterior').addEventListener('click', () => {
+    mostrarSlide(slideAtual - 1);
+});
+
+function irParaSlide(index) {
+    mostrarSlide(index);
+}

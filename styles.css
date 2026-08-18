@@ -1,161 +1,328 @@
+/* --- 1. VARIÁVEIS E RESET GLOBAL --- */
+:root {
+    --primary-color: #3b82f6;
+    --primary-glow: rgba(59, 130, 246, 0.4);
+    --accent-color: #06b6d4;
+    --bg-dark: #090d16;
+    --glass-bg: rgba(15, 23, 42, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --text-light: #f1f5f9;
+    --text-muted: #94a3b8;
+    --alert-color: #ef4444;
+    --success-color: #22c55e;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    scroll-behavior: smooth;
 }
 
+/* --- 2. FUNDO FLUIDO E ANIMAÇÃO DE ENTRADA --- */
 body {
-    background-color: #f0f2f5;
-    color: #1c1e21;
-    line-height: 1.6;
-    padding: 20px;
-}
-
-header {
-    background: linear-gradient(135deg, #0f172a, #1e3a8a);
-    color: #ffffff;
-    text-align: center;
-    padding: 40px 20px;
-    border-radius: 12px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, rgba(9, 13, 22, 0.88), rgba(15, 23, 42, 0.92)),
+                url('img/fundo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: var(--text-light);
+    line-height: 1.7;
+    padding: 30px 20px;
+    min-height: 100vh;
 }
 
 main {
-    max-width: 850px;
+    max-width: 900px;
     margin: 0 auto;
+    animation: fadeIn 1s ease-in-out;
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- 3. CABEÇALHO ELEGANTE --- */
+header {
+    text-align: center;
+    padding: 50px 20px 30px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #bfd5f0, #1dcee6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+header p {
+    color: rgb(180, 211, 216);
+    font-size: 1.15rem;
+}
+
+/* --- 4. MENU DE NAVEGAÇÃO FLUTUANTE --- */
 .menu {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin-bottom: 25px;
+    gap: 12px;
+    margin-bottom: 35px;
     flex-wrap: wrap;
 }
 
 .menu a {
-    background-color: #ffffff;
-    color: #1e3a8a;
-    padding: 10px 18px;
-    border-radius: 20px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-light);
+    padding: 10px 22px;
+    border-radius: 30px;
     text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    transition: background 0.2s;
+    font-size: 0.95rem;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu a:hover {
-    background-color: #1e3a8a;
-    color: #ffffff;
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 20px var(--primary-glow);
+    transform: translateY(-2px);
 }
 
+/* --- 5. CARDS COM GLASSMORPHISM --- */
 section {
-    background: #ffffff;
-    padding: 25px;
-    margin-bottom: 25px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 32px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+section:hover {
+    border-color: rgba(96, 165, 250, 0.3);
+    transform: translateY(-3px);
 }
 
 h2 {
-    color: #0f172a;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #e2e8f0;
-    padding-bottom: 8px;
+    color: #ffffff;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 12px;
 }
 
 article {
-    margin-bottom: 18px;
+    margin-bottom: 22px;
+    padding: 16px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 3px solid var(--primary-color);
+    transition: background 0.3s ease;
+}
+
+article:hover {
+    background: rgba(255, 255, 255, 0.05);
 }
 
 article h3 {
-    color: #2563eb;
-    margin-bottom: 5px;
+    color: #60a5fa;
+    margin-bottom: 8px;
+    font-size: 1.2rem;
 }
 
-ul {
-    margin-left: 20px;
-}
-
-ul li {
-    margin-bottom: 12px;
-}
-
-/* Estilos dos Componentes Interativos */
+/* --- 6. ELEMENTOS INTERATIVOS E BOTÕES --- */
 .input-group {
     display: flex;
-    gap: 10px;
-    margin-top: 15px;
+    gap: 12px;
+    margin-top: 20px;
     flex-wrap: wrap;
 }
 
 input[type="text"] {
     flex: 1;
-    min-width: 250px;
-    padding: 12px;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    font-size: 15px;
+    min-width: 260px;
+    padding: 14px 18px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-glow);
 }
 
 button {
-    background-color: #2563eb;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     color: white;
     border: none;
-    padding: 12px 20px;
-    border-radius: 6px;
+    padding: 14px 24px;
+    border-radius: 10px;
     cursor: pointer;
-    font-size: 15px;
-    font-weight: bold;
-    transition: background 0.2s;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
 }
 
 button:hover {
-    background-color: #1d4ed8;
+    opacity: 0.95;
+    transform: scale(1.02);
+    box-shadow: 0 0 20px var(--primary-glow);
 }
 
 .btn-opcao {
     display: block;
     width: 100%;
     text-align: left;
-    background-color: #f8fafc;
-    color: #334155;
-    border: 1px solid #cbd5e1;
-    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-light);
+    border: 1px solid var(--glass-border);
+    margin-top: 12px;
+    padding: 14px 18px;
+    border-radius: 10px;
 }
 
 .btn-opcao:hover {
-    background-color: #e2e8f0;
-    color: #0f172a;
+    background: rgba(59, 130, 246, 0.15);
+    border-color: var(--primary-color);
 }
 
+/* --- 7. CAIXAS DE FEEDBACK FLUIDAS --- */
 .resultado-box {
-    margin-top: 15px;
-    padding: 12px;
-    border-radius: 6px;
-    font-weight: bold;
-    display: none;
+    margin-top: 20px;
+    padding: 16px;
+    border-radius: 10px;
+    font-weight: 600;
+    animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .sucesso {
-    background-color: #dcfce7;
-    color: #166534;
-    border: 1px solid #bbf7d0;
-    display: block;
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.3);
 }
 
 .alerta {
-    background-color: #fee2e2;
-    color: #991b1b;
-    border: 1px solid #fecaca;
-    display: block;
+    background: rgba(239, 68, 68, 0.15);
+    color: #fca5a5;
+    border: 1px solid rgba(239, 68, 68, 0.3);
 }
 
 footer {
     text-align: center;
-    margin-top: 40px;
-    font-size: 14px;
-    color: #64748b;
+    margin-top: 50px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* --- ESTILOS DO CARROSSEL --- */
+.carrossel-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.carrossel {
+    position: relative;
+    min-height: 240px;
+}
+
+.slide {
+    display: none;
+    animation: fadeSlide 0.5s ease-in-out;
+}
+
+.slide.active {
+    display: block;
+}
+
+@keyframes fadeSlide {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.slide-badge {
+    display: inline-block;
+    background: rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.slide h3 {
+    color: #38bdf8;
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+}
+
+.dica-resposta {
+    margin-top: 15px;
+    padding: 12px 16px;
+    background: rgba(34, 197, 94, 0.1);
+    border-left: 4px solid #22c55e;
+    border-radius: 6px;
+}
+
+/* Controles e Indicadores */
+.carrossel-controles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid var(--glass-border);
+}
+
+.btn-nav {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--glass-border);
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}
+
+.btn-nav:hover {
+    background: var(--primary-color);
+}
+
+.indicadores {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active, .dot:hover {
+    background: var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-glow);
+    transform: scale(1.2);
 }

@@ -23,32 +23,36 @@
 
         <!-- Principais Golpes -->
         <section id="golpes" class="card-golpes">
-            <h2>Principais Golpes Digitais</h2>
-            
-            <article>
-                <h3>1. Phishing (Links Falsos)</h3>
-                <p>E-mails, SMS ou mensagens no WhatsApp com ofertas imperdíveis ou alertas de conta bloqueada. O objetivo é fazer você clicar em um link falso e digitar suas senhas.</p>
-            </article>
+    <h2>Guia Detalhado dos Principais Golpes Digitais</h2>
+    
+    <article>
+        <h3>1. Phishing e Engenharia Social (Links Falsos)</h3>
+        <p><strong>Como funciona:</strong> O criminoso envia e-mails, SMS ou mensagens via WhatsApp mascarados como comunicações oficiais de bancos, lojas ou órgãos públicos. Geralmente trazem textos alarmantes, como "Sua conta será bloqueada" ou "Você tem um reembolso pendente". Ao clicar, a vítima é direcionada a uma página idêntica à oficial, onde digita senhas e dados bancários que são capturados em tempo real.</p>
+        <p><strong>Sinais de alerta:</strong> Erros de gramática, saudações genéricas ("Prezado cliente" em vez do seu nome), remetentes com domínios estranhos e links que não terminam com o endereço oficial da instituição.</p>
+    </article>
 
-            <article>
-                <h3>2. Golpes do Pix e Engenharia Social</h3>
-                <p>Criminosos se passam por parentes ou amigos pedindo dinheiro urgente pelo WhatsApp. Também usam promessas de "robô do Pix" ou retorno financeiro rápido.</p>
-            </article>
+    <article>
+        <h3>2. Falso Parente e Fraudes no Pix</h3>
+        <p><strong>Como funciona:</strong> Golpistas utilizam fotos públicas de redes sociais para criar um perfil falso no WhatsApp. Eles entram em contato com familiares dizendo que trocaram de número e que precisam de uma transferência urgente via Pix devido a um "problema temporário no aplicativo do banco".</p>
+        <p><strong>Sinais de alerta:</strong> Pedidos urgentes de transferência financeira para chaves Pix em nome de terceiros (desconhecidos) e recusa em atender chamadas de voz ou vídeo para confirmar a identidade.</p>
+    </article>
 
-            <article>
-                <h3>3. Falsa Central de Atendimento</h3>
-                <p>Ligação informando uma compra suspeita no seu cartão. Eles pedem para você ligar em um número falso ou baixar um aplicativo de acesso remoto.</p>
-            </article>
+    <article>
+        <h3>3. Falsa Central de Atendimento (Golpe da Mão Fantasma)</h3>
+        <p><strong>Como funciona:</strong> A vítima recebe uma ligação automatizada ou de um suposto atendente informando sobre uma compra de alto valor suspeita. Para "cancelar" a transação, a pessoa é induzida a baixar um aplicativo de suporte remoto ou clicar em um link para "atualização de segurança". Com isso, o golpista assume o controle total do celular à distância.</p>
+        <p><strong>Sinais de alerta:</strong> NENHUM banco solicita a instalação de aplicativos terceiros (como AnyDesk ou TeamViewer) nem pede que o cliente digite senhas para cancelar transações por telefone.</p>
+    </article>
 
-            <article>
-                <h3>4. Lojas Virtuais Clonadas</h3>
-                <p>Sites idênticos aos de grandes marcas, com preços extremamente baixos. Após o pagamento via Pix ou boleto, o produto nunca é entregue.</p>
-            </article>
-        </section>
+    <article>
+        <h3>4. E-commerce Falso e Lojas Clonadas</h3>
+        <p><strong>Como funciona:</strong> Criação de sites idênticos a grandes redes varejistas com anúncios patrocinados em redes sociais oferecendo produtos de alto valor por preços irrisórios. O pagamento é exigido via Pix ou boleto bancário sem opção de cartão de crédito.</p>
+        <p><strong>Sinais de alerta:</strong> Preços excessivamente abaixo do mercado, ausência de CNPJ válido no rodapé da página, falhas de HTTPS e dados de pagamento em nome de pessoas físicas.</p>
+    </article>
+</section>
 
         <!-- Ferramenta Interativa: Verificador de Links -->
         <section id="verificador" class="ferramenta">
-            <h2>Simulador de Verificação de Links</h2>
+            <h2> Verificação de Links</h2>
             <p>Cole a URL de um site suspeito abaixo para analisar os indícios de segurança básicos:</p>
             
             <div class="input-group">
@@ -57,6 +61,16 @@
             </div>
             <div id="resultadoUrl" class="resultado-box"></div>
         </section>
+
+        <section id="denuncia" class="passos-emergencia">
+    <h2>O Que Fazer Se Você For Vítima de Um Golpe?</h2>
+    <ol>
+        <li><strong>Contate o Banco Imediatamente:</strong> Ligue para os canais oficiais do seu banco e solicite o bloqueio das senhas e a abertura do procedimento de MED (Mecanismo Especial de Devolução) do Pix.</li>
+        <li><strong>Registre um Boletim de Ocorrência (B.O.):</strong> Faça o registro na Polícia Civil da sua região (muitos estados permitem o B.O. online) detalhando comprovantes, conversas e chaves Pix envolvidas.</li>
+        <li><strong>Troque Senhas e Cancele Cartões:</strong> Altere imediatamente as senhas de e-mails, redes sociais e contas bancárias em um dispositivo seguro. Cancele cartões de crédito comprometidos.</li>
+        <li><strong>Avise Seus Contatos:</strong> Caso tenham clonado ou usado seu nome no WhatsApp, avise amigos e familiares para não realizarem transferências em seu nome.</li>
+    </ol>
+</section>
 
         <!-- Boas Práticas -->
         <section id="dicas" class="boas-praticas">
@@ -70,16 +84,53 @@
         </section>
 
         <!-- Quiz Interativo -->
-        <section id="quiz" class="interativo">
-            <h2>Quiz Rápidos de Segurança</h2>
-            <div class="pergunta">
-                <p><strong>Situação:</strong> Você recebe uma mensagem no WhatsApp do seu banco dizendo que há uma compra suspeita e pede para você confirmar sua senha digitando-a na conversa. O que fazer?</p>
-                
-                <button class="btn-opcao" data-correta="false">Digitar a senha para cancelar a compra imediatamente.</button>
-                <button class="btn-opcao" data-correta="true">Ignorar a mensagem e ligar para o número oficial do banco impresso no cartão.</button>
+        <!-- Carrossel de Dicas e Desafios -->
+<section id="dicas" class="carrossel-container">
+    <h2>Dicas Rápidas & Desafios de Segurança</h2>
+
+    <div class="carrossel">
+        <!-- Slide 1 -->
+        <div class="slide active">
+            <span class="slide-badge">Dica 01 / Pergunta</span>
+            <h3>Como identificar se uma mensagem no WhatsApp é de um golpista?</h3>
+            <p><strong>Cenário:</strong> Um número desconhecido manda mensagem com a foto de um parente dizendo que mudou de número e precisa de um Pix urgente.</p>
+            <div class="dica-resposta">
+                <p>💡 <strong>Regra de Ouro:</strong> NUNCA faça transferências antes de ligar para o número antigo da pessoa ou fazer uma chamada de vídeo para confirmar quem está do outro lado.</p>
             </div>
-            <div id="feedbackQuiz" class="resultado-box"></div>
-        </section>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+            <span class="slide-badge">Dica 02 / Pergunta</span>
+            <h3>Qual é a diferença entre um site seguro e um site falso?</h3>
+            <p><strong>Cenário:</strong> Você recebe um link com um desconto de 80% em um produto de última geração.</p>
+            <div class="dica-resposta">
+                <p>💡 <strong>Regra de Ouro:</strong> Olhe sempre o endereço (URL). Sites falsos usam pequenas alterações no nome (ex: <code>lojamagazine-descontos.com</code> em vez do oficial). Na dúvida, digite o site oficial direto no navegador!</p>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide">
+            <span class="slide-badge">Dica 03 / Pergunta</span>
+            <h3>O banco pode me ligar pedindo para cancelar uma compra suspeita?</h3>
+            <p><strong>Cenário:</strong> Uma ligação da "Central de Segurança" diz que seu cartão foi clonado e pede para você digitar sua senha ou baixar um aplicativo de proteção.</p>
+            <div class="dica-resposta">
+                <p>💡 <strong>Regra de Ouro:</strong> Golpe da Mão Fantasma! O banco JAMAIS pede senha, PIN ou para instalar aplicativos (como AnyDesk). Desligue e ligue você mesmo para o número atrás do seu cartão.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controles do Carrossel -->
+    <div class="carrossel-controles">
+        <button id="btnAnterior" class="btn-nav">❮ Anterior</button>
+        <div class="indicadores">
+            <span class="dot active" onclick="irParaSlide(0)"></span>
+            <span class="dot" onclick="irParaSlide(1)"></span>
+            <span class="dot" onclick="irParaSlide(2)"></span>
+        </div>
+        <button id="btnProximo" class="btn-nav">Próximo ❯</button>
+    </div>
+</section>
     </main>
 
     <footer>
