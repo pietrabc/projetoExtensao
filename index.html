@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Segurança Digital - Guia de Proteção</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Segurança Digital para Todos</h1>
+        <p>Aprenda a identificar e se proteger dos principais golpes na internet.</p>
+    </header>
+
+    <main>
+        <!-- Navegação Interna -->
+        <nav class="menu">
+            <a href="#golpes">Principais Golpes</a>
+            <a href="#verificador">Verificador de Links</a>
+            <a href="#dicas">Dicas de Segurança</a>
+            <a href="#quiz">Teste Seus Conhecimentos</a>
+        </nav>
+
+        <!-- Principais Golpes -->
+        <section id="golpes" class="card-golpes">
+            <h2>Principais Golpes Digitais</h2>
+            
+            <article>
+                <h3>1. Phishing (Links Falsos)</h3>
+                <p>E-mails, SMS ou mensagens no WhatsApp com ofertas imperdíveis ou alertas de conta bloqueada. O objetivo é fazer você clicar em um link falso e digitar suas senhas.</p>
+            </article>
+
+            <article>
+                <h3>2. Golpes do Pix e Engenharia Social</h3>
+                <p>Criminosos se passam por parentes ou amigos pedindo dinheiro urgente pelo WhatsApp. Também usam promessas de "robô do Pix" ou retorno financeiro rápido.</p>
+            </article>
+
+            <article>
+                <h3>3. Falsa Central de Atendimento</h3>
+                <p>Ligação informando uma compra suspeita no seu cartão. Eles pedem para você ligar em um número falso ou baixar um aplicativo de acesso remoto.</p>
+            </article>
+
+            <article>
+                <h3>4. Lojas Virtuais Clonadas</h3>
+                <p>Sites idênticos aos de grandes marcas, com preços extremamente baixos. Após o pagamento via Pix ou boleto, o produto nunca é entregue.</p>
+            </article>
+        </section>
+
+        <!-- Ferramenta Interativa: Verificador de Links -->
+        <section id="verificador" class="ferramenta">
+            <h2>Simulador de Verificação de Links</h2>
+            <p>Cole a URL de um site suspeito abaixo para analisar os indícios de segurança básicos:</p>
+            
+            <div class="input-group">
+                <input type="text" id="urlInput" placeholder="Ex: https://www.seubanco.com.br">
+                <button id="btnVerificar">Analisar Link</button>
+            </div>
+            <div id="resultadoUrl" class="resultado-box"></div>
+        </section>
+
+        <!-- Boas Práticas -->
+        <section id="dicas" class="boas-praticas">
+            <h2>Dicas Essenciais de Proteção</h2>
+            <ul>
+                <li><strong>Ative a Autenticação em Duas Etapas (2FA):</strong> Adicione uma camada extra de proteção em suas contas do WhatsApp, e-mail e redes sociais.</li>
+                <li><strong>Desconfie de Urgência:</strong> Golpistas usam senso de urgência ("Sua conta será cancelada em 1 hora") para impedir que você pense com calma.</li>
+                <li><strong>Confira o Domínio:</strong> Veja o endereço no navegador. Por exemplo, <code>banco-seguro-login.com</code> NÃO é o site oficial do seu banco.</li>
+                <li><strong>Nunca Baixe Aplicativos de Suporte:</strong> Bancos não pedem para você instalar programas como AnyDesk ou TeamViewer no seu celular.</li>
+            </ul>
+        </section>
+
+        <!-- Quiz Interativo -->
+        <section id="quiz" class="interativo">
+            <h2>Quiz Rápidos de Segurança</h2>
+            <div class="pergunta">
+                <p><strong>Situação:</strong> Você recebe uma mensagem no WhatsApp do seu banco dizendo que há uma compra suspeita e pede para você confirmar sua senha digitando-a na conversa. O que fazer?</p>
+                
+                <button class="btn-opcao" data-correta="false">Digitar a senha para cancelar a compra imediatamente.</button>
+                <button class="btn-opcao" data-correta="true">Ignorar a mensagem e ligar para o número oficial do banco impresso no cartão.</button>
+            </div>
+            <div id="feedbackQuiz" class="resultado-box"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Projeto Extensionista de Conscientização e Inclusão Digital.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
